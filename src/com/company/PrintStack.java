@@ -1,7 +1,4 @@
 package com.company;
-
-import sun.org.mozilla.javascript.internal.EcmaError;
-
 import java.io.*;
 
 public class PrintStack{
