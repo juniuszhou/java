@@ -7,13 +7,26 @@ import java.util.Map;
 import java.util.Vector;
 
 public class CombineLocation {
+    public static Map<Long, String> ReadRegionType()throws Exception{
+        String path = "D:\\TrainingData\\Region\\RegionTypeToName.txt";
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(path)));
+        String s = in.readLine();
+        Map<Long, String> m = new HashMap<>();
 
-    public static Map<Long, Vector<String>> getAllLocation(Map<Long, Vector<String> > loc) {
+        while (s != null) {
+            String[] idAndName = s.split("\t");
+            m.put(Long.parseLong(idAndName[0]), idAndName[1]);
+            //System.out.println(Long.parseLong(idAndName[0]) + " " + idAndName[1]);
+            s = in.readLine();
+        }
+        return m;
+    }
+
+    public static Map<Long, Vector<String>> getAllLocation(Map<Long, Vector<String> > loc
+    , Map<Long, String> tt) {
         Map<Long, Vector<String>> m = new HashMap<>();
-        String path = "D:\\RegionInfo.txt";
-        String oPath = "D:\\training.txt";
-
-
+        String path = "D:\\TrainingData\\Region\\RegionLandmark.txt";
+        String oPath = "D:\\TrainingData\\Region\\regionInfo.txt";
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(oPath));
             // file format is GaiaID, RegionID, RegionName, RegionTypeID, landmark lat, landmark long.
@@ -34,44 +47,45 @@ public class CombineLocation {
                 }
                 Vector<String> locs = loc.get(gaia);
 
-                result.append(as[1]); // region ID
+                result.append(as[0]); // gaia ID
                 result.append("\t");
 
                 result.append(as[2]); // region name
                 result.append("\t");
 
-                result.append("City"); // hard code.
+                result.append(tt.get(Long.parseLong(as[3]))); // hard code.
                 result.append("\t");
 
                 result.append(as[3]); // region type id
                 result.append("\t");
 
-                result.append(locs.size()); // region name
+                int nums = locs.size() / 2 - 1;
+                result.append(nums); // region name
                 result.append("\t");
 
-                for(String ss: locs){
-                    result.append(ss); // all location.
-                    result.append("\t");
+
+                for(int j = 0; j < nums * 2; j ++){
+                    result.append(locs.get(j)); // all location.
+                    if (j < nums * 2 - 1)
+                        result.append(", ");
                 }
+                result.append("\t");
 
                 result.append("NULL"); // just add don't know why.
                 result.append("\t");
 
                 result.append(as[4]); // Landmark
-                result.append("\t");
+                result.append(", ");
 
                 result.append(as[5]); // Landmark.
                 result.append("\t");
 
-                result.append(i); // Landmark.
-                i++;
+                result.append(as[1]); // region ID.
 
                 String restStr = result.toString();
-                bw.write(restStr);
-                bw.newLine();
+                // bw.write(restStr);
+                // bw.newLine();
                 System.out.println(restStr);
-
-                //output to file.
 
                 s = in.readLine();
 
@@ -87,7 +101,7 @@ public class CombineLocation {
     public static Map<Long, Vector<String> > getAllPosition(){
 
         Map<Long, Vector<String>> m = new HashMap<>();
-        String path = "D:\\RegionTop.txt";
+        String path = "D:\\TrainingData\\Region\\RegionTop.txt";
         try {
             File f = new File(path);
 
@@ -100,8 +114,9 @@ public class CombineLocation {
                 String[] as = s.split("\t");
                 Long tmp = Long.parseLong(as[0]);
                 if (!cur.equals(tmp)){
+                    if (!cur.equals(0L))
+                        m.put(cur, vs);
                     cur = tmp;
-                    m.put(cur, vs);
                     vs = new Vector<>();
                 }
                 vs.add(as[1]);
@@ -109,18 +124,6 @@ public class CombineLocation {
                 s = in.readLine();
             }
             m.put(cur, vs);
-            /*
-            Iterator it = m.entrySet().iterator();
-            while (it.hasNext()) {
-                Map.Entry pairs = (Map.Entry) it.next();
-                System.out.print(pairs.getKey());
-                Vector<String> value = (Vector<String>) pairs.getValue();
-                for(String ssv : value){
-                    System.out.print(" " + ssv);
-
-                }
-                System.out.println();
-            }*/
 
         } catch (Exception e) {
             System.out.println("Exception god1");
@@ -130,8 +133,7 @@ public class CombineLocation {
         return m;
     }
 
-    public static void main(String[] args) {
-        //getAllPosition();
-        getAllLocation(getAllPosition());
+    public static void main(String[] args)throws Exception{
+        Map<Long, Vector<String>> m = getAllLocation(getAllPosition(), ReadRegionType());
     }
 }

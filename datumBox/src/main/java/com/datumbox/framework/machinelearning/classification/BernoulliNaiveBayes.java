@@ -82,7 +82,9 @@ public class BernoulliNaiveBayes extends BaseNaiveBayes<BernoulliNaiveBayes.Mode
     protected static final boolean IS_BINARIZED = true;
     
     public BernoulliNaiveBayes(String dbName) {
-        super(dbName, BernoulliNaiveBayes.ModelParameters.class, BernoulliNaiveBayes.TrainingParameters.class, BernoulliNaiveBayes.ValidationMetrics.class);
+        super(dbName, BernoulliNaiveBayes.ModelParameters.class,
+                BernoulliNaiveBayes.TrainingParameters.class,
+                BernoulliNaiveBayes.ValidationMetrics.class);
     }
     
     @Override
@@ -112,13 +114,18 @@ public class BernoulliNaiveBayes extends BaseNaiveBayes<BernoulliNaiveBayes.Mode
         Object someClass = classesSet.iterator().next();
         
         
-        Map<Object, Double> cachedLogPriors = new HashMap<>(logPriors); //this is small. Size equal to class numbers. We cache it because we don't want to load it again and again from the DB
+        Map<Object, Double> cachedLogPriors = new HashMap<>(logPriors);
+        //this is small. Size equal to class numbers.
+        // We cache it because we don't want to load it again and again from the DB
         
         for(Record r : newData) {
             //Build new map here! reinitialize the prediction scores with the scores of the classes
             AssociativeArray predictionScores = new AssociativeArray(new HashMap<>(cachedLogPriors)); 
             
-            //in order to avoid looping throug all available features for each record, we have already calculated the Sum of log(1-prob). So we know the score of a record that has no feature activated. We add this score on the initial score below:
+            //in order to avoid looping throug all available features for each record,
+            // we have already calculated the Sum of log(1-prob).
+            // So we know the score of a record that has no feature activated.
+            // We add this score on the initial score below:
             for(Map.Entry<Object, Double> entry : sumOfLog1minusProb.entrySet()) {
                 Object theClass = entry.getKey();
                 Double value = entry.getValue();

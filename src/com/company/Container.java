@@ -1,10 +1,8 @@
+package com.company;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/**
- * Created by junijun on 6/28/14.
- */
 public class Container {
     public static void main(String[] args) {
         //Vector is a thread safe container

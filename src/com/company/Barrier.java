@@ -1,6 +1,4 @@
-/**
- * Created by junijun on 6/27/14.
- */
+package com.company;
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
 

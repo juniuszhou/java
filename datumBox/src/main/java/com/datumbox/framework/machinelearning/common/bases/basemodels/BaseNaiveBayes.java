@@ -38,7 +38,10 @@ import org.mongodb.morphia.annotations.Transient;
  * @param <TP>
  * @param <VM>
  */
-public abstract class BaseNaiveBayes<MP extends BaseNaiveBayes.ModelParameters, TP extends BaseNaiveBayes.TrainingParameters, VM extends BaseNaiveBayes.ValidationMetrics> extends BaseMLclassifier<MP, TP, VM> {
+public abstract class BaseNaiveBayes<MP extends BaseNaiveBayes.ModelParameters,
+        TP extends BaseNaiveBayes.TrainingParameters,
+        VM extends BaseNaiveBayes.ValidationMetrics>
+        extends BaseMLclassifier<MP, TP, VM> {
     
     
     public static abstract class ModelParameters extends BaseMLclassifier.ModelParameters {
