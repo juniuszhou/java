@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DeepLearn/DeepLearn.iml" filepath="$PROJECT_DIR$/DeepLearn/DeepLearn.iml" />
       <module fileurl="file://$PROJECT_DIR$/FirstMaven/FirstMaven.iml" filepath="$PROJECT_DIR$/FirstMaven/FirstMaven.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Jieba/Jieba.iml" filepath="$PROJECT_DIR$/Jieba/Jieba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DeepLearn/LogisticRegression/LogisticRegression.iml" filepath="$PROJECT_DIR$/DeepLearn/LogisticRegression/LogisticRegression.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyJunit/MyJunit.iml" filepath="$PROJECT_DIR$/MyJunit/MyJunit.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyPractice/MyPractice.iml" filepath="$PROJECT_DIR$/MyPractice/MyPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/java.iml" filepath="$PROJECT_DIR$/java.iml" />

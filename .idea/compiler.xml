@@ -22,7 +22,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="Datumbox" />
+        <module name="DeepLearn" />
         <module name="FirstMaven" />
+        <module name="java" />
         <module name="MyJunit" />
         <module name="MyPractice" />
       </profile>
