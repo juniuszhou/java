@@ -1,8 +1,5 @@
 package Algo;
 
-/**
- * Created by juzhou on 12/2/2014.
- */
 public class Newton {
     public static double squareRoot(double a, double b){
         if (Math.abs(b*b -a) < 0.0000000001)

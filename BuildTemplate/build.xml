@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="com.expedia.e3.shopsvc.prototypes.geowalle" basedir="." default="build">
+
+    <property environment="env"/>
+    <property file="HOMES.properties" prefix="HOMES"/>
+    <property name="checkstyle.option.failOnViolation" value="true" />
+    <!-- how to disable style check for some directory and all source files under-->
+    <property name="checkstyle.suppressions.file" value="suppressions.xml"/>
+    <!-- how to disable pmd check for some directory and all source files under-->
+    <property name="pmd.exclusion.pattern" value="**/lss/**,**/lodging/**" />
+
+    <!--TODO: Remove buildsystem-build override once Clover 4.0 is available-->
+    <target name="buildsystem-build">
+        <antcall>
+            <target name="clean"/>
+            <target name="build"/>
+            <target name="build-tests"/>
+            <target name="run-tests"/>
+        </antcall>
+    </target>
+
+    <target name="copy-support">
+        <copy todir="${output.build}">
+            <fileset dir="${project.root}/src" includes="resources/**"/>
+        </copy>
+    </target>
+
+    <import file="${env.BUILD_SYSTEM_ROOT}/${HOMES.BUILD_SYSTEM_VERSION}/java/build_first_class.xml"/>
+    <import file="${env.BUILD_SYSTEM_ROOT}/${HOMES.BUILD_SYSTEM_VERSION}/java/build_common_component.xml"/>
+
+</project>

@@ -35,7 +35,7 @@ public class NokiaJsonParser {
             return null;
         }
 
-        Vector<Double> res = new Vector<>();
+        Vector<Double> res = new Vector<Double>();
 
         for(Object j : jarr)
         {
