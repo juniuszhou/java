@@ -1,4 +1,4 @@
-package main.java.MyThread;
+package MyPractice.MyThread;
 
 class MyRun implements Runnable{
     private int a = 100;
@@ -7,7 +7,7 @@ class MyRun implements Runnable{
         while(a > 0){
             try {
                 a = a - 1;
-                System.out.println(Thread.currentThread().getName() + a);
+                System.out.println(Thread.currentThread().getName() + " " + a);
                 Thread.sleep(1000);
             }
             catch (Exception e){

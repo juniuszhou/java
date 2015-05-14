@@ -1,7 +1,5 @@
-package MyNLP;
+package MyPractice.MyNLP;
 
-import java.awt.*;
-import java.awt.image.IndexColorModel;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;

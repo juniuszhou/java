@@ -1,4 +1,4 @@
-package MyNLP;
+package MyPractice.MyNLP;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

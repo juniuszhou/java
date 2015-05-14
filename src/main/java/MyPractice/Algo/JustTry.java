@@ -1,4 +1,4 @@
-package main.java.Algo;
+package MyPractice.Algo;
 
 public class JustTry {
 

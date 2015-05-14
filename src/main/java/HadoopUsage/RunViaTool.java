@@ -1,4 +1,4 @@
-package main.java.HadoopUsage;
+package HadoopUsage;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;

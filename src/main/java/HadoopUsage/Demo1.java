@@ -1,4 +1,4 @@
-package main.java.HadoopUsage;
+package HadoopUsage;
 
 import java.io.IOException;
 

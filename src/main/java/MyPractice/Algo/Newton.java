@@ -1,4 +1,4 @@
-package Algo;
+package MyPractice.Algo;
 
 public class Newton {
     public static double squareRoot(double a, double b){
