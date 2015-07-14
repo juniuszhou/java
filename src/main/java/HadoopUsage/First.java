@@ -1,4 +1,4 @@
-package main.java.HadoopUsage;
+package HadoopUsage;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
@@ -16,8 +16,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.ToolRunner;
 
-public class First {}
-/*
+public class First {
     public static class TokenizerMapper
             extends Mapper<Object, Text, Text, IntWritable>{
 
@@ -71,4 +70,4 @@ public class First {}
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }
-*/
+

@@ -1,9 +1,9 @@
-
+package DeepLearn;
 public class LogisticRegression {
 	public int N;
 	public int n_in;
-	public int n_out;
-	public double[][] W;
+    public int n_out;
+    public double[][] W;
 	public double[] b;
 	
 	public LogisticRegression(int N, int n_in, int n_out) {

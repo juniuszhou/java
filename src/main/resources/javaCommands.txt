@@ -1,0 +1,4 @@
+jar tf  // check all classes in a jar file
+jar cf jar_file_name all_files  // put all_files into a jar package.
+
+

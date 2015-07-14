@@ -16,9 +16,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-public class Demo1 {}
-    /*
-extends Configured implements Tool{
+public class Demo1 extends Configured implements Tool {
 
 
     public static void main(String[] args) throws Exception {
@@ -26,7 +24,7 @@ extends Configured implements Tool{
 
     }
 
-    public static class DemoMap extends Mapper<LongWritable, Text, Text, IntWritable>{
+    public static class DemoMap extends Mapper<LongWritable, Text, Text, IntWritable> {
 
         @Override
         protected void map(LongWritable key, Text value, Context context)
@@ -35,7 +33,7 @@ extends Configured implements Tool{
             String line = value.toString();
             String[] splitdata = line.split("\\,");
             String contry = splitdata[4];
-            System.out.println("country:"+contry);
+            System.out.println("country:" + contry);
             if (contry.trim().equals("\"COUNTRY\"")) {
                 return;
             } else {
@@ -45,10 +43,10 @@ extends Configured implements Tool{
 
     }
 
-    public static class DemoReduce extends Reducer<Text, IntWritable, Text, IntWritable>{
+    public static class DemoReduce extends Reducer<Text, IntWritable, Text, IntWritable> {
 
         @Override
-        protected void reduce(Text arg0, Iterable<IntWritable> arg1,Context context)
+        protected void reduce(Text arg0, Iterable<IntWritable> arg1, Context context)
                 throws IOException, InterruptedException {
             System.out.println("reduce");
             int sum = 0;
@@ -59,6 +57,7 @@ extends Configured implements Tool{
         }
 
     }
+
     @Override
     public int run(String[] arg0) throws Exception {
         Configuration conf = getConf();
@@ -77,6 +76,7 @@ extends Configured implements Tool{
         job.setCombinerClass(DemoReduce.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
-        return job.waitForCompletion(true)?0:1;
+        return job.waitForCompletion(true) ? 0 : 1;
     }
-    */
+}
+

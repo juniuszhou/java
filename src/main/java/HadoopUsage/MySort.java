@@ -1,4 +1,4 @@
-package main.java.HadoopUsage;
+package HadoopUsage;
 import java.io.IOException;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -21,8 +21,7 @@ import org.apache.hadoop.util.GenericOptionsParser;
  *
  * @author daT dev.tao@gmail.com
  */
-public class MySort {}
-/*
+public class MySort {
     public static class SortMapper extends Mapper<Object, Text, IntWritable, IntWritable> {
 
         //直接输出key,value，key为需要排序的值，value任意
@@ -97,4 +96,4 @@ public class MySort {}
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 
-}*/
+}
