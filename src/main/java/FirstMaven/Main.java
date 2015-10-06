@@ -1,3 +1,5 @@
+package FirstMaven;
+
 import java.io.StringReader;
 
 import javax.xml.parsers.DocumentBuilder;

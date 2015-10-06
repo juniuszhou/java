@@ -1,4 +1,4 @@
-package main.java.DeepLearn.SdA;
+package DeepLearn.SdA;
 import java.util.Random;
 
 public class dA {

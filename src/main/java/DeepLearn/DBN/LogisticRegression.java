@@ -1,4 +1,4 @@
-package main.java.DeepLearn.DBN;
+package DeepLearn.DBN;
 
 public class LogisticRegression {
 	public int N;

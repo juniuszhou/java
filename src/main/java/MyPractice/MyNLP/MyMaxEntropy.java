@@ -1,7 +1,8 @@
-package MyNLP;
+package MyPractice.MyNLP;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.util.HashMap;
 import java.util.*;
 import java.util.concurrent.SynchronousQueue;
 
@@ -23,7 +24,7 @@ class Pair{
 }
 
 class MyMap{
-    private Map<Pair, Double> mData = new HashMap();
+    private Map<Pair, Double> mData = new HashMap<>();
     public void put(Pair p, Double d) {
         boolean b = false;
         Map.Entry<Pair, Double> r = null;
@@ -35,6 +36,7 @@ class MyMap{
             }
         }
         if(b){
+
             mData.replace(r.getKey(), d);
         }
         mData.put(p, d);

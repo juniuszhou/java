@@ -1,4 +1,4 @@
-package main.java.DeepLearn.DBN;
+package DeepLearn.DBN;
 
 import java.util.Random;
 

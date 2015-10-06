@@ -1,0 +1,15 @@
+####
+there is a special class in java.
+it is class.
+
+public final class Class<T> implements java.io.Serializable,
+                              GenericDeclaration,
+                              Type,
+                              AnnotatedElement {
+
+                              }
+
+adf
+
+
+adsf

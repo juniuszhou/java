@@ -1,3 +1,5 @@
+package FirstMaven;
+
 import java.nio.charset.Charset;
 
 /**

@@ -1,4 +1,4 @@
-package main.java.DeepLearn.SdA;
+package DeepLearn.SdA;
 
 public class LogisticRegression {
 	public int N;
